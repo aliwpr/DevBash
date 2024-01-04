@@ -9,7 +9,7 @@ API_KEY="ab45d51d5ea548e350b741b97c00c959"
 location="$1"
 URL="https://api.openweathermap.org/data/2.5/weather?q="$location"&units=metric&appid="$API_KEY""
 weather=$(curl -s $URL | jq -r '.')
-if [[ $( echo $weather | jq -r '.code' ) == "404" ]];then
+if [[ $( echo $weather | jq -r '.cod' ) == "404" ]];then
     echo "location doesnt exist"
 else
     echo "location: $location"
