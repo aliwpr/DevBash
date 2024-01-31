@@ -10,8 +10,10 @@ backup=$2
 New=$3
 if [[ $New == "yes" || $New == "YES" ]]; then
     mkdir -p "$2"
-else 
-    break
+    if [[ $? -eq 1 ]] ;then 
+        echo "cant create a directory"
+        exit 1
+    fi 
 fi
 
 if [[ ! -d $directory || ! -d $backup ]];then
@@ -19,23 +21,23 @@ echo "$1 directory not exist"
 exit 1
 fi
 
-#20231212103153
+#20211212103153
 timestamp=`date +%Y%m%d%H%M%S`
 
 which rsync # or use command -v option
 
 if [[ $? -eq 1 ]];then
-    echo "please install rsync"
+    echo "please install rsync first"
     exit 1
 fi
 
 rsync -av --delete "$directory/" "$backup/backup_$timestamp/"
 
 if [[ $? -eq 0 ]];then
-echo "job done"
+    echo "job done"
 else
-echo "we have exceptions"
-exit 1
+    echo "we have exceptions and cant backup,consider checking logs"
+    exit 1
 fi
 
 

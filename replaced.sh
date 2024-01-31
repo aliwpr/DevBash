@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-
+# easy replace lol!
 if [[ $# -ne 3 ]];then
 echo "give me 1: a word 2:replaced word 3:a filename"
 exit 1 

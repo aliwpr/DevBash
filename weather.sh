@@ -1,5 +1,5 @@
 #!/usr/bin/env bash 
-# give me a name of city and it will return the weather
+# give me a name of city and it will return the weather using openweather map 
 
 if [[ $# -ne 1 ]];then
     echo "please give me city name"

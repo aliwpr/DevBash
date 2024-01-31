@@ -5,7 +5,7 @@ function printSystemInfo() {
   echo ""
 
   
-  echo "Hardware:"
+  echo "hardware:"
   echo ""
   lshw -short
 
@@ -24,7 +24,7 @@ function printSystemInfo() {
   if command -v lsb_release &>/dev/null ; then
     echo "distriu: $(lsb_release -d | cut -f2)"
   elif [ -f /etc/os-release ]; then
-    echo "distriu: $(egrep -oi ^pretty_name=.+$ | cut -d"=" -f2)"
+    echo "distriu: $(grep -i "pretty" /etc/os-release | cut -d"=" -f2)"
   fi
 
 }

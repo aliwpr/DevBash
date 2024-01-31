@@ -2,6 +2,7 @@
 # this script give a directory bname and type of suffix and prefix and then a value and rename all of files in that directory as u wish.
 if [[ $# -ne 3 ]];then
  echo "this script is for renaming give me directory and prefix or suffix type and your value in a row"
+ echo "usage: $0 /directory name  prefix ali"
  exit 1
 fi 
 
@@ -9,7 +10,7 @@ directory=$1
 prefixOrSuffix=$2
 value=$3
 if [[ ! -d $directory ]];then
-echo "directory $directory nist"
+echo "directory $directory not exist"
 exit 1
 fi
 cd "$directory" || exit 1

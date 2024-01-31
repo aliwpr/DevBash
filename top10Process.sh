@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # simple to10 process of sys
-function top_processes() {
+function top_processes {
   echo "top 10 process resource usage:"
   echo ""
 

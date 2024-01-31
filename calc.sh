@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#USAGE: creating a simple calculator 
+#USAGE: creating a simple calculator!
 function multiplication {
     echo "scale=2; $1 * $2" | bc
 }
@@ -9,18 +9,18 @@ function sum {
 function subtraction {
     echo "scale=2; $1 - $2" | bc
 }
-function Division {
+function division {
     if [[ $2 -eq 0 ]];then
-    echo "division by zero is not allow"
+        echo "division by zero is not allow"
     else
-    echo "scale=2; $1 / $2" | bc
+        echo "scale=2; $1 / $2" | bc
     fi
 }
 
 
 
 while true;do
-    echo "options is sum subtraction multiplication division exit "
+    echo "options is  just sum, subtraction, multiplication, division, exit ! "
     read -p "what do you want to do? " choice
     case $choice in
         multiplication)
@@ -33,10 +33,10 @@ while true;do
         read -p "give me second number " n2
         sum $n1 $n2
         ;;
-        Division)
+        division)
         read -p "give me first number " n1
         read -p "give me second number " n2
-        Division $n1 $n2
+        division $n1 $n2
         ;;
         subtraction)
         read -p "give me first number " n1

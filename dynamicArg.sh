@@ -5,7 +5,7 @@ function sumDynamicArguments() {
   local sum=0
   for arg in "$@"; do
     # check for int
-    if [[ $arg =~ [0-9]{0,}(\.|)[0-9] ]]; then
+    if [[ $arg =~ [0-9]{0,}(\.|[0-9]) ]]; then
       sum=$(echo "scale=2 ; $sum + $arg" | bc)
     else
       echo "warning: ignoring non-numeric argument: $arg"
